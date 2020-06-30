@@ -1,3 +1,31 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background: #FFFFFF;
+  color: black;
+  text-align: center;
+  font-family: 'Monda', sans-serif;
+  font-weight: normal;
+  font-size: 35px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 55px;
+  padding-bottom: 30px;
+}
+
+.btn-testy {
+    color: #fff;
+    background-color: #808B96;
+    border-color: #808B96;
+    border-radius: 8px;
+    padding: 30px 65px;
+    font-size: 50px;
+}
+
+.btn-testy:hover {
+    background-color: #566573;
+}
