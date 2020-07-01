@@ -32,15 +32,24 @@
 
   <h3>Students you are connected with</h3>
 
-  <div>
-    <% @mentor.students.each do |student|%>
-      <ul>
-        <li>
-          <%= student.first_name + " " + student.last_name + " - " + "(" + student.email + ")"%>
-        </li>
-      </ul>
-    <% end %>
+
+  
+  <div class="row mx-auto">
+  <% @mentor.students.each do |student|%>
+    <div class="col-sm-4">
+      <div class="card">
+      <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"> <%= student.first_name + " "+ student.last_name %> </h5>
+          <p class="card-text"> <%= student.email %> </p>
+          <a href="#" class="btn btn-primary">Message</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
   </div>
 
   <%= link_to 'Log out', destroy_mentor_session_path, :method => :delete %>
 </body>
+
+

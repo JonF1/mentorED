@@ -3,4 +3,18 @@
 <%= link_to "Forum", simple_discussion_path %>
 <p> <%= link_to 'Chat', conversations_path %> </p>
 
+<h3> Your Mentor</h3>
+<div class="row">
+  <div class="col-sm-4 ">
+    <div class="card ">
+    <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"> <%= @student.mentor.first_name + " "+ @student.mentor.last_name %> </h5>
+        <p class="card-text"> <%= @student.mentor.email %> </p>
+        <a href="#" class="btn btn-primary">Message</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <%= link_to 'Log out', destroy_student_session_path, :method => :delete %>
