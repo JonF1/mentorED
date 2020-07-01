@@ -28,7 +28,7 @@
       </strong>
       <small>
         <%= t('commented_on') %>
-        <%= link_to forum_post.created_at.strftime("%d-%m-%Y %H:%M"), simple_discussion.forum_thread_path(@forum_thread, anchor: "forum_post_#{forum_post.id}") %>
+        <%= link_to forum_post.created_at.strftime("%d-%m-%Y %H:%M"), simple_discussion.forum_thread_path(@forum_thread, anchor: "forum_post_#{forum_post.id}"), style: "color: black" %>
       </small>
     </div>
   </div>
