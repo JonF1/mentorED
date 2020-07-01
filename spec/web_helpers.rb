@@ -1,6 +1,6 @@
 def sign_up_student
   visit "/"
-  click_link "Student Login"
+  click_button "Student login"
   click_link "Sign up"
   fill_in "First name", with: "Test"
   fill_in "Last name", with: "Testerson"
@@ -12,7 +12,7 @@ end
 
 def sign_in_student
   visit "/"
-  click_link "Student Login"
+  click_button "Student login"
   fill_in "Email", with: "test123@student.com"
   fill_in "Password", with: "12345q"
   click_button "Log in"
@@ -20,7 +20,7 @@ end
 
 def sign_up_mentor
   visit "/"
-  click_link "Mentor Login"
+  click_button "Mentor login"
   click_link "Sign up"
   fill_in "First name", with: "Test"
   fill_in "Last name", with: "Testerson"
@@ -32,7 +32,7 @@ end
 
 def sign_in_mentor
   visit "/"
-  click_link "Mentor Login"
+  click_button "Mentor login"
   fill_in "Email", with: "test123@mentor.com"
   fill_in "Password", with: "12345q"
   click_button "Log in"
