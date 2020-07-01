@@ -10,8 +10,13 @@ RSpec.describe StudentsController, type: :controller do
         expect(response).to have_http_status(:success)
       end
     end
-  end
 
-  #Also need to add test to check for redirect when someone logged in as a student tries to go to the mentor dashboard
+    # context "if a student is not signed in" do
+    #   it "redirects to log in form" do
+    #     student_path(student.id)
+    #     expect(response).to have_http_status(:redirect)
+    #   end
+    # end
+  end
 
 end
