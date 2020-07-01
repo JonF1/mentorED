@@ -3,18 +3,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  background: #FFFFFF;
+  background: url(background.jpg) !important;
+  height: 100%;
+  background-position: 50% 25% !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  position: inherit !important;
   color: black;
   text-align: center;
-  font-family: 'Monda', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: normal;
   font-size: 35px;
 }
 
 h1 {
   text-align: center;
-  font-size: 55px;
+  font-size: 8.5rem !important;
   padding-bottom: 30px;
+  color: black;
+  font-family: 'MuseoModerno', cursive;
 }
 
 .btn-testy {
@@ -22,8 +29,9 @@ h1 {
     background-color: #808B96;
     border-color: #808B96;
     border-radius: 8px;
-    padding: 30px 65px;
-    font-size: 50px;
+    padding: 10px 30px;
+    font-size: 25px;
+    font-family: 'MuseoModerno', cursive;
 }
 
 .btn-testy:hover {
