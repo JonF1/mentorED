@@ -1,0 +1,49 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background: url(background.jpg);
+  height: 100%;
+  background-position: 50% 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: inherit;
+  color: black;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-weight: normal;
+  font-size: 35x;
+}
+
+h1 {
+  text-align: center;
+  font-size: 8.5rem !important;
+  padding-bottom: 30px;
+  color: black;
+  font-family: 'Nunito', sans-serif;
+}
+
+.btn-testy {
+    color: #fff;
+    background-color: #808B96;
+    border-color: #808B96;
+    border-radius: 8px;
+    padding: 10px 30px;
+    font-size: 25px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.btn-testy2 {
+  color: #fff;
+  background-color: #808B96;
+  border-color: #808B96;
+  border-radius: 8px;
+  padding: 10px 33.5px;
+  font-size: 25px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.btn-testy:hover {
+    background-color: #566573;
+}
