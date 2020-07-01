@@ -13,37 +13,31 @@ body {
   text-align: center;
   font-family: 'Nunito', sans-serif;
   font-weight: normal;
-  font-size: 35x;
+  font-size: 25px;
 }
 
-h1 {
+h2 {
   text-align: center;
-  font-size: 8.5rem !important;
+  font-size: 7.5rem;
   padding-bottom: 30px;
   color: black;
   font-family: 'Nunito', sans-serif;
 }
 
-.btn-testy {
+input[type=submit] {
     color: #fff;
     background-color: #808B96;
     border-color: #808B96;
     border-radius: 8px;
-    padding: 10px 30px;
+    padding: 5px 30px;
     font-size: 25px;
     font-family: 'Nunito', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.btn-testy2 {
-  color: #fff;
-  background-color: #808B96;
-  border-color: #808B96;
-  border-radius: 8px;
-  padding: 10px 33.5px;
-  font-size: 25px;
-  font-family: 'Nunito', sans-serif;
-}
 
-.btn-testy:hover {
+
+input[type=submit]:hover {
     background-color: #566573;
 }

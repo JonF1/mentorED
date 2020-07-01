@@ -5,7 +5,7 @@
 body {
   background: url(background.jpg);
   height: 100%;
-  background-position: 50% 25%;
+  background-position: 50% 12%;
   background-repeat: no-repeat;
   background-size: cover;
   position: inherit;
@@ -45,5 +45,9 @@ h1 {
 }
 
 .btn-testy:hover {
+    background-color: #566573;
+}
+
+.btn-testy2:hover {
     background-color: #566573;
 }
