@@ -24,11 +24,11 @@
       <%= image_tag("M-ED-Alpha.png", alt: "Comment logo", width: "40", height: "40") %>
 
       <strong class="forum-post-user">
-        <%= forum_post.user.name %> <%= forum_user_badge(forum_post.user) %>
+        <%= forum_post.user.name %><%= forum_user_badge(forum_post.user) %>
       </strong>
       <small>
         <%= t('commented_on') %>
-        <%= link_to forum_post.created_at.strftime("%d-%m-%Y %H:%M"), simple_discussion.forum_thread_path(@forum_thread, anchor: "forum_post_#{forum_post.id}"), style: "color: black" %>
+        <%= link_to forum_post.created_at.strftime("%d-%m-%Y %H:%M"), simple_discussion.forum_thread_path(@forum_thread, anchor: "forum_post_#{forum_post.id}") %>
       </small>
     </div>
   </div>
