@@ -3,12 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  background: url(background.jpg) !important;
+  background: url(background.jpg);
   height: 100%;
-  background-position: 50% 25% !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-  position: inherit !important;
+  background-position: 50% 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: inherit;
   color: black;
   text-align: center;
   font-family: 'Nunito', sans-serif;
