@@ -19,3 +19,4 @@ Rails.application.config.assets.precompile += %w( sign_in.css )
 
 Rails.application.config.assets.precompile += %w( sign_up.css )
 Rails.application.config.assets.precompile += %w( student.css )
+Rails.application.config.assets.precompile += %w( simple_discussion.css )
