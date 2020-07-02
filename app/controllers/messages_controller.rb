@@ -10,6 +10,7 @@ class MessagesController < ApplicationController
     @messages.where("user_id != ? AND read = ?", current_user.id, false).update_all(read: true)
 
     @message = @conversation.messages.new
+    
   end
 
   def create
@@ -23,6 +24,6 @@ class MessagesController < ApplicationController
 
   private
     def message_params
-      params.require(:message).permit(:body, :user_id)
+      params.require(:message).permit(:body, :user_id, :file)
     end
 end

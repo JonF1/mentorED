@@ -1,3 +1,3 @@
 class Post < ApplicationRecord
-  belongs_to :student, required: false
+  has_one_attached :file
 end

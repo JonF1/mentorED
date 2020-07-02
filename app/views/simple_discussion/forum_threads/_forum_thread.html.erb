@@ -3,7 +3,7 @@
     <div class="row">
 
       <div class="col-sm-1 text-center">
-          <%= avatar_tag(forum_thread.user.email) %>
+        <%= image_tag("M-ED-Alpha.png", alt: "Comment logo", width: "40", height: "40") %>
       </div>
 
       <div class="col">
@@ -13,7 +13,7 @@
           <% end %>
 
           <%= link_to simple_discussion.forum_thread_path(forum_thread) do %>
-            <%= icon "fas", "thumb-tack", class: "text-muted" if forum_thread.pinned? %> <%= forum_thread.title %>
+            <%= icon "fas", "thumb-tack", class: "text-muted" if forum_thread.pinned? %> <div style="color: #666"><%= forum_thread.title %></div>
           <% end %>
         </h4>
 
@@ -28,7 +28,7 @@
       </div>
 
       <div class="col-sm-2 text-center">
-        <%= link_to simple_discussion.forum_thread_path(forum_thread), class: "thread-posts-count" do %>
+        <%= link_to simple_discussion.forum_thread_path(forum_thread), class: "thread-posts-count", style: "color: #666" do %>
           <span class="count"><%= forum_thread.forum_posts_count %></span>
           <small><%= t("post", count: forum_thread.forum_posts_count) %></small>
         <% end %>
