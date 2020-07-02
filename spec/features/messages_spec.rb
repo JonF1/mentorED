@@ -23,6 +23,6 @@ RSpec.feature "Messages", type: :feature do
     add_student
     send_message
     click_link "Back to Your Dashboard"
-    expect(page).to have_content("test123@student.com")
+    expect(page).to have_content("Test Testerson")
   end
 end
