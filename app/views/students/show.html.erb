@@ -1,5 +1,24 @@
-<p>Welcome, <%= @student.first_name %></p>
-
+<%= stylesheet_link_tag    'student', media: 'all' %>
+<nav class="navbar navbar-dark bg-dark">
+    <ul>
+      <li class="student_name">Welcome, <%= @student.first_name %></li>
+      <li class="student_dashboard"><% if student_signed_in? %>
+            <%= link_to 'Dashboard', student_path, method: :get %>
+          <% end %>
+          <% if mentor_signed_in? %>
+            <%= link_to 'Dashboard', mentor_path, method: :get %>
+          <% end %></li>
+      <li class="logout"><% if student_signed_in? %>
+            <%= link_to 'Log out', destroy_student_session_path, method: :delete %>
+          <% end %>
+          <% if mentor_signed_in? %>
+            <%= link_to 'Log out', destroy_mentor_session_path, method: :delete %>
+          <% end %></li>
+      <li class="forum"><%= link_to "Forum", simple_discussion_path %><li>
+      <li class="chat"> <%= link_to 'Chat', conversations_path %> </li>
+    </ul>
+  </nav>
+  <p>Welcome, <%= @student.first_name %></p>
 <%= link_to "Forum", simple_discussion_path %>
 <p> <%= link_to 'Chat', conversations_path %> </p>
 

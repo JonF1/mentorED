@@ -9,7 +9,28 @@
     });
   </script>
 </head>
+
 <body>
+
+  <nav class="navbar navbar-dark bg-dark">
+      <ul>
+        <li><% if student_signed_in? %>
+              <%= link_to 'Dashboard', student_path, method: :get %>
+            <% end %>
+            <% if mentor_signed_in? %>
+              <%= link_to 'Dashboard', mentor_path, method: :get %>
+            <% end %></li>
+        <li><% if student_signed_in? %>
+              <%= link_to 'Log out', destroy_student_session_path, method: :delete %>
+            <% end %>
+            <% if mentor_signed_in? %>
+              <%= link_to 'Log out', destroy_mentor_session_path, method: :delete %>
+            <% end %></li>
+        <li><%= link_to "Forum", simple_discussion_path %><li>
+        <li> <%= link_to 'Chat', conversations_path %> </li>
+      </ul>
+  </nav>
+
   <p>Welcome,<%= @mentor.first_name %></p>
 
   <%= link_to "Forum", simple_discussion_path %>
