@@ -21,10 +21,10 @@
     <% end %>
 
     <div>
-      <%= avatar_tag(forum_post.user.email) %>
+      <%= image_tag("M-ED-Alpha.png", alt: "Comment logo", width: "40", height: "40") %>
 
       <strong class="forum-post-user">
-        <%= forum_post.user.name %> <%= forum_user_badge(forum_post.user) %>
+        <%= forum_post.user.name %><%= forum_user_badge(forum_post.user) %>
       </strong>
       <small>
         <%= t('commented_on') %>
