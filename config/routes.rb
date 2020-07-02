@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :tests
+  get 'pages/home'
+
   get 'messages/index'
 
   get 'conversations/index'
@@ -15,6 +18,8 @@ Rails.application.routes.draw do
   end
 
   resources :students
+
+  resources :posts
 
   resources :conversations, only: [:index, :create] do
     resources :messages, only: [:index, :create]
