@@ -56,7 +56,7 @@ end
 
 def send_message
   click_link "Chat"
-  click_link "test123@student.com"
+  click_link "Test Testerson"
   fill_in "message[body]", with: "test message"
   click_button "Send"
 end
