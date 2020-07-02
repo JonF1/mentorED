@@ -2,12 +2,11 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   def new
     @post = Post.new
-    @user = current_user
   end
 
   def create
     @post = Post.create(post_params)
-    redirect_to posts_url
+    redirect_to conversation_messages_path(@conversation)
   end
 
   def index
@@ -23,6 +22,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :file)
   end
 end
