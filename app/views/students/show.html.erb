@@ -3,20 +3,20 @@
 <%= link_to "Forum", simple_discussion_path %>
 <p> <%= link_to 'Chat', conversations_path %> </p>
 
-<h3> Your Mentor</h3>
+<h3 style="text-align: center; padding-bottom: 20px"> Your Mentor</h3>
 
+<!-- <div class="row mx-auto"> -->
 <% if @student.mentor != nil %>
-  <div class="row">
-    <div class="col-sm-4 ">
-      <div class="card ">
-      <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title"> <%= @student.mentor.first_name + " "+ @student.mentor.last_name %> </h5>
-          <p class="card-text"> <%= @student.mentor.email %> </p>
-          <%= button_to "Message", conversations_path(sender_id: current_user.id, receiver_id: @student.mentor.id) %>
-        </div>
+  <div class="row mx-auto">
+    <div class="card mx-auto" style="text-align: center; width: 20rem; height: 13">
+    <div style="text-align: center; padding-top: 10px"><%= image_tag("mentorED_emblem.png", alt: "Card logo", width: "75", height: "75") %></div>
+      <div class="card-body">
+        <h5 class="card-title"> <%= @student.mentor.first_name + " "+ @student.mentor.last_name %> </h5>
+        <p class="card-text"> <%= @student.mentor.email %> </p>
+        <%= button_to "Message", conversations_path(sender_id: current_user.id, receiver_id: @student.mentor.id), style: "background-color: #666" %>
       </div>
     </div>
   </div>
+  <!-- </div> -->
 <% end %>
 <%= link_to 'Log out', destroy_student_session_path, :method => :delete %>
