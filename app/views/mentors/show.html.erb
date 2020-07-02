@@ -13,7 +13,10 @@
   <p>Welcome,<%= @mentor.first_name %></p>
 
   <%= link_to "Forum", simple_discussion_path %>
-  <p> <%= link_to 'Chat', conversations_path %> </p>
+  <br>
+  <%= link_to 'Chat', conversations_path %>
+  <br>
+  <%= link_to 'Log out', destroy_mentor_session_path, :method => :delete %>
 
   <% @conversations.each do |conversation| %>
       <%= link_to conversation.recipient(current_user).email, conversation_messages_path(conversation) %>
@@ -23,33 +26,30 @@
       <br>
   <% end %>
 
-  <div class="ui widget">
+  <div class="ui widget" style="text-align: right; padding-bottom: 50px; padding-right: 20px" >
     <%= form_with model: @mentor, method: "put", local: true do |f| %>
       <%= f.text_field :student_email, id: "add_student" %>
       <%= f.submit "Add Student" %>
     <% end %>
   </div>
 
-  <h3>Students you are connected with</h3>
+  <h3 style="text-align: center; padding-bottom: 20px;">Students you are connected with</h3>
 
-
-  
   <div class="row mx-auto">
-  <% @mentor.students.each do |student|%>
-    <div class="col-sm-4">
-      <div class="card">
-      <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title"> <%= student.first_name + " "+ student.last_name %> </h5>
-          <p class="card-text"> <%= student.email %> </p>
-          <a href="#" class="btn btn-primary">Message</a>
+  <% if @mentor.students.length != nil %>
+    <% @mentor.students.each do |student|%>
+      <div class="col-sm-4">
+        <div class="card">
+        <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
+        <div style="text-align: center; padding-top: 10px"><%= image_tag("mentorED_emblem.png", alt: "Card logo", width: "75", height: "75") %></div>
+          <div class="card-body">
+            <h5 class="card-title"> <%= student.first_name + " "+ student.last_name %> </h5>
+            <p class="card-text"> <%= student.email %> </p>
+            <a href="#" class="btn btn-secondary">Message</a>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
   </div>
-
-  <%= link_to 'Log out', destroy_mentor_session_path, :method => :delete %>
 </body>
-
-
