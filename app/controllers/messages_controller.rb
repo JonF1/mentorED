@@ -10,8 +10,7 @@ class MessagesController < ApplicationController
     @messages.where("user_id != ? AND read = ?", current_user.id, false).update_all(read: true)
 
     @message = @conversation.messages.new
-
-    @posts = Post.all
+    
   end
 
   def create
