@@ -14,3 +14,9 @@
  *= require_simple_discussion
  *= require_self
  */
+
+.forum-thread-filters-1 div div a {
+  color: #666 !important;
+  background-color: transparent !important;
+  text-decoration: none !important;
+}
