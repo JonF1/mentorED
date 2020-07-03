@@ -3,13 +3,61 @@
   <head>
     <title>mentorED</title>
     <%= csrf_meta_tags %>
+
     <%= javascript_include_tag 'application' %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;800&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,600;1,200&display=swap" rel="stylesheet">
   </head>
 
-  <body style="font-family: 'Nunito', sans-serif;">
+  <section>
+    <% if user_signed_in? == true %>
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="left">
+          <div class="nav mr-auto">
+            <div class="nav-item" >
+              <%= link_to 'Dashboard', if current_user.type == "Student"
+                "/students/#{current_user.id}/dashboard"
+                else
+                  "/mentors/#{current_user.id}/dashboard"
+                end, style: "color: white;" %>
+            </div>
+
+
+            <div class="nav-item">
+              <%= link_to 'Chat', conversations_path, style: "color: white;" %>
+            </div>
+            <div class="nav-item">
+              <%= link_to "Forum", simple_discussion_path, style: "color: white;" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <%= image_tag("mentorED5.png", alt: "Page logo", width: "150", height: "60", style: "color: white; padding-bottom: 15px") %>
+        </div>
+
+        <div class="right">
+          <div class="nav ml-auto">
+            <div class="nav-item">
+              <%= "Welcome, #{current_user.first_name}" %>
+            </div>
+            <div class="nav-item"><% if student_signed_in? %>
+              <%= link_to 'Log out', destroy_student_session_path, method: :delete, style: "color: white;" %>
+              <% end %>
+              <% if mentor_signed_in? %>
+                <%= link_to 'Log out', destroy_mentor_session_path, method: :delete, style: "color: white;" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <% end %>
+  </section>
+
+  <body>
     <%= render 'layouts/alerts' %>
     <%= yield %>
+
   </body>
 </html>

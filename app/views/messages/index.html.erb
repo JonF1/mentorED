@@ -1,4 +1,8 @@
+
+<%= stylesheet_link_tag    'messages', media: 'all' %>
+
 <div>
+
   <% @messages.each do |message| %>
     <% if message.body %>
     <div class="row">
@@ -39,11 +43,3 @@
 <% end %>
 </div>
 <br>
-<div class="links-bar" style="text-align:center">
-<a><%= link_to 'Back to Conversations', conversations_path %></a>
-<% if current_user.type == "Student" %>
-  <a><%= link_to 'Back to Your Dashboard', student_path(current_user.id) %></a>
-<% else %>
-  <a><%= link_to 'Back to Your Dashboard', mentor_path(current_user.id) %></a>
-<% end %>
-</div>

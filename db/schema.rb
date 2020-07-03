@@ -43,13 +43,6 @@ ActiveRecord::Schema.define(version: 2020_06_29_092538) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "conversations", force: :cascade do |t|
-    t.integer "sender_id"
-    t.integer "receiver_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "forum_categories", id: :serial, force: :cascade do |t|
     t.string "name", null: false
     t.string "slug", null: false

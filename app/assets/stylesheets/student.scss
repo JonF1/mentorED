@@ -1,0 +1,32 @@
+// Place all the styles related to the Student controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background: url(background.jpg);
+  height: 100%;
+  background-position: 50% 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: inherit;
+  color: black;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.navbar{
+ color: white;
+ height: 60px;
+
+}
+.left .nav-item{
+  padding-right: 50px;
+  color: white;
+  padding-bottom: 20px;
+}
+
+.right .nav-item{
+  padding-left: 50px;
+  padding-bottom: 20px;
+}

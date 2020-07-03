@@ -1,31 +1,24 @@
+<%= stylesheet_link_tag    'conversations', media: 'all' %>
+
 <div class="row">
-<div class="col">
-<div class="card" style="text-align:center; margin-left: 50px;">
-  <h2>Your Active Conversations</h2>
-  <% @conversations.each do |conversation| %>
-      <%= link_to conversation.recipient(current_user).first_name + " " + conversation.recipient(current_user).last_name, conversation_messages_path(conversation) %>
-      <% if !conversation.unread_message_count(current_user).zero? %>
-        (<%= conversation.unread_message_count(current_user) %>)
+  <div class="col">
+    <div class="card" style="text-align:center; margin-left: 50px;">
+      <h2>Your Active Conversations</h2>
+      <% @conversations.each do |conversation| %>
+          <%= link_to conversation.recipient(current_user).first_name + " " + conversation.recipient(current_user).last_name, conversation_messages_path(conversation) %>
+          <% if !conversation.unread_message_count(current_user).zero? %>
+            (<%= conversation.unread_message_count(current_user) %>)
+          <% end %>
+          <br>
       <% end %>
-      <br>
-  <% end %>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card" style="text-align:center; margin-right: 50px;">
+      <h2>All Available Users</h2>
+      <% @users.each do |user| %>
+        <%= link_to user.first_name + " " + user.last_name, conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post %><br>
+      <% end %>
+    </div>
+  </div>
 </div>
-</div>
-<div class="col">
-<div class="card" style="text-align:center; margin-right: 50px;">
-  <h2>All Available Users</h2>
-  <% @users.each do |user| %>
-    <%= link_to user.first_name + " " + user.last_name, conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post %><br>
-  <% end %>
-</div>
-</div>
-</div>
-
-<br>
-
-<%= link_to 'Back to Your Dashboard',
-if current_user.type == "Student"
-  "/students/#{current_user.id}/dashboard"
-else
-  "/mentors/#{current_user.id}/dashboard"
-end %>

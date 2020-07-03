@@ -22,7 +22,7 @@ RSpec.feature "Messages", type: :feature do
     sign_in_mentor
     add_student
     send_message
-    click_link "Back to Your Dashboard"
+    click_link "Dashboard"
     expect(page).to have_content("Test Testerson")
   end
 end

@@ -1,7 +1,5 @@
-<p>Welcome, <%= @student.first_name %></p>
 
-<%= link_to "Forum", simple_discussion_path %>
-<p> <%= link_to 'Chat', conversations_path %> </p>
+<%= stylesheet_link_tag    'student', media: 'all' %>
 
 <h3 style="text-align: center; padding-bottom: 20px"> Your Mentor</h3>
 
@@ -19,4 +17,3 @@
   </div>
   <!-- </div> -->
 <% end %>
-<%= link_to 'Log out', destroy_student_session_path, :method => :delete %>

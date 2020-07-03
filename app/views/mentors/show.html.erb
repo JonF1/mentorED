@@ -1,5 +1,6 @@
 <head>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <%= stylesheet_link_tag    'student', media: 'all' %>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
@@ -9,22 +10,8 @@
     });
   </script>
 </head>
+
 <body>
-  <p>Welcome,<%= @mentor.first_name %></p>
-
-  <%= link_to "Forum", simple_discussion_path %>
-  <br>
-  <%= link_to 'Chat', conversations_path %>
-  <br>
-  <%= link_to 'Log out', destroy_mentor_session_path, :method => :delete %>
-
-  <% @conversations.each do |conversation| %>
-      <%= link_to conversation.recipient(current_user).email, conversation_messages_path(conversation) %>
-      <% if !conversation.unread_message_count(current_user).zero? %>
-        (<%= conversation.unread_message_count(current_user) %>)
-      <% end %>
-      <br>
-  <% end %>
 
   <div class="ui widget" style="text-align: right; padding-bottom: 50px; padding-right: 20px" >
     <%= form_with model: @mentor, method: "put", local: true do |f| %>
@@ -52,4 +39,5 @@
     <% end %>
   <% end %>
   </div>
+
 </body>

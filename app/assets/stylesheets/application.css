@@ -14,46 +14,18 @@
  *= require_simple_discussion
  *= require_self
  */
+.navbar{
+ color: white;
+ height: 60px;
 
-.links-bar a:not([href]) {
-    color: #666;
-    text-decoration: none;
+}
+.left .nav-item{
+  padding-right: 50px;
+  color: white;
+  padding-bottom: 20px;
 }
 
-.links-bar a:focus {
-   color: #666;
-   text-decoration: none;
-}
-
- .links-bar a {
-   color: #666;
-   background-color: transparent;
-   text-decoration: none;
- }
-.links-bar a:visited {
-   color: #666;
-   background-color: transparent;
-   text-decoration: none;
- }
- .links-bar a:hover {
-   color: #666;
-   background-color: transparent;
-   text-decoration: underline;
- }
- .links-bar a:active {
-   color: #666;
-   background-color: transparent;
-   text-decoration: underline;
- }
-
- .field {
-   cols: 45;
-   rows: 2;
-   placeholder: "Wagwan G?"
- }
-
-.forum-thread-filters-1 div div a {
-  color: #666 !important;
-  background-color: transparent !important;
-  text-decoration: none !important;
+.right .nav-item{
+  padding-left: 50px;
+  padding-bottom: 20px;
 }
