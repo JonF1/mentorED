@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag    'messages', media: 'all' %>
 <ul>
   <% @messages.each do |message| %>
     <% if message.body %>
@@ -32,9 +33,3 @@
 <% end %>
 </ul>
 <br>
-<%= link_to 'Back to Your Dashboard',
-if current_user.type == "Student"
-  "/students/#{current_user.id}/dashboard"
-else
-  "/mentors/#{current_user.id}/dashboard"
-end %>

@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag    'conversations', media: 'all' %>
 <ul style="text-align:center">
   <h2>Active Conversations</h2>
   <% @conversations.each do |conversation| %>
@@ -15,12 +16,3 @@
     <%= link_to user.email, conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post %><br>
   <% end %>
 </ul>
-
-<br>
-
-<%= link_to 'Back to Your Dashboard',
-if current_user.type == "Student"
-  "/students/#{current_user.id}/dashboard"
-else
-  "/mentors/#{current_user.id}/dashboard"
-end %>
