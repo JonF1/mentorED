@@ -15,12 +15,14 @@
           <div class="card"style="width:20rem; float:left;margin-left:125px;"">
             <div class="card-body">
       <% end %>
-        <h5 class="card-title"><%= message.user.first_name + " " + message.user.last_name %></h5>
-          <p style="font-size: 20px;"><%= message.body %></p>
-          <p><%= message.created_at.strftime("%d/%m/%y at %l:%M %p") %></p>
+        <h5 class="card-title" style ="font-weight: bold;"><%= message.user.first_name + " " + message.user.last_name %></h5>
+          <p style="font-size: 22px;"><%= message.body %></p>
+          <p style="font-size: 15px; color: #808080;"><%= message.created_at.strftime("%d/%m/%y at %l:%M %p") %></p>
           <% if message.file.attached? %>
+          <div class="file"  style="font-size: 15px;">
             <%= link_to "#{message.file.filename}" + " " + Filesize.from("#{message.file.byte_size} B").pretty, rails_blob_path(message.file, disposition: 'attachments')%>
           <%end%>
+          </div>
         </div>
       </div>
     </div>
