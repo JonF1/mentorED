@@ -5,10 +5,10 @@
     <div class="card" style="text-align:center; margin-left: 50px;">
       <h2>Your Active Conversations</h2>
       <% @conversations.each do |conversation| %>
-          <%= link_to conversation.recipient(current_user).first_name + " " + conversation.recipient(current_user).last_name, conversation_messages_path(conversation) %>
+          <p><%= link_to conversation.recipient(current_user).first_name + " " + conversation.recipient(current_user).last_name, conversation_messages_path(conversation) %>
           <% if !conversation.unread_message_count(current_user).zero? %>
             (<%= conversation.unread_message_count(current_user) %>)
-          <% end %>
+          <% end %></p>
           <br>
       <% end %>
     </div>
