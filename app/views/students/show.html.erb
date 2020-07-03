@@ -11,7 +11,7 @@
       <div class="card-body">
         <h5 class="card-title"> <%= @student.mentor.first_name + " "+ @student.mentor.last_name %> </h5>
         <p class="card-text"> <%= @student.mentor.email %> </p>
-        <%= button_to "Message", conversations_path(sender_id: current_user.id, receiver_id: @student.mentor.id), style: "background-color: #666" %>
+        <%= button_to "Message", conversations_path(sender_id: current_user.id, receiver_id: @student.mentor.id)%>
       </div>
     </div>
   </div>
