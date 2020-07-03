@@ -11,37 +11,33 @@
   </script>
 </head>
 
-<div class="hero-image">
-
-</div>
-
 <body>
 
-  <% @conversations.each do |conversation| %>
-      <%= link_to conversation.recipient(current_user).email, conversation_messages_path(conversation) %>
-      <% if !conversation.unread_message_count(current_user).zero? %>
-        (<%= conversation.unread_message_count(current_user) %>)
-      <% end %>
-      <br>
-  <% end %>
-
-  <div class="ui widget">
+  <div class="ui widget" style="text-align: right; padding-bottom: 50px; padding-right: 20px" >
     <%= form_with model: @mentor, method: "put", local: true do |f| %>
       <%= f.text_field :student_email, id: "add_student" %>
       <%= f.submit "Add Student" %>
     <% end %>
   </div>
 
-  <h3>Students you are connected with</h3>
+  <h3 style="text-align: center; padding-bottom: 20px;">Students you are connected with</h3>
 
-  <div>
+  <div class="row mx-auto">
+  <% if @mentor.students.length != nil %>
     <% @mentor.students.each do |student|%>
-      <ul>
-        <li>
-          <%= student.first_name + " " + student.last_name + " - " + "(" + student.email + ")"%>
-        </li>
-      </ul>
+      <div class="col-sm-4">
+        <div class="card">
+        <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
+        <div style="text-align: center; padding-top: 10px"><%= image_tag("mentorED_emblem.png", alt: "Card logo", width: "75", height: "75") %></div>
+          <div class="card-body">
+            <h5 class="card-title"> <%= student.first_name + " "+ student.last_name %> </h5>
+            <p class="card-text"> <%= student.email %> </p>
+            <%= button_to "Message", conversations_path(sender_id: current_user.id, receiver_id: student.id) %>
+          </div>
+        </div>
+      </div>
     <% end %>
+  <% end %>
   </div>
 
 </body>

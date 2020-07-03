@@ -1,3 +1,4 @@
+
 // Place all the styles related to the Mentor controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -29,4 +30,12 @@ body {
 .right .nav-item{
   padding-left: 50px;
   padding-bottom: 20px;
+
+.col-sm-4 {
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.row {
+  width: 60%;
 }
