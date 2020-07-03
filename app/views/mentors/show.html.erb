@@ -13,13 +13,6 @@
 
 <body>
 
-  <div class="ui widget" style="text-align: right; padding-bottom: 50px; padding-right: 20px" >
-    <%= form_with model: @mentor, method: "put", local: true do |f| %>
-      <%= f.text_field :student_email, id: "add_student" %>
-      <%= f.submit "Add Student" %>
-    <% end %>
-  </div>
-
   <h3 style="text-align: center; padding-bottom: 20px;">Students you are connected with</h3>
 
   <div class="row mx-auto">
@@ -38,6 +31,13 @@
       </div>
     <% end %>
   <% end %>
+  </div>
+
+  <div class="ui widget" style="text-align: center; padding-top: 50px; padding-right: 20px" >
+    <%= form_with model: @mentor, method: "put", local: true do |f| %>
+      <%= f.text_field :student_email, id: "add_student" %>
+      <%= f.submit "Add Student" %>
+    <% end %>
   </div>
 
 </body>
